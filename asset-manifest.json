@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/sleip-weather/static/css/main.9c87f621.css",
-    "main.js": "/sleip-weather/static/js/main.1c244d7d.js",
+    "main.js": "/sleip-weather/static/js/main.7b26b154.js",
     "static/js/787.54951cd8.chunk.js": "/sleip-weather/static/js/787.54951cd8.chunk.js",
     "static/media/BatonTurboWebTrial-Regular.woff2": "/sleip-weather/static/media/BatonTurboWebTrial-Regular.a63abd91b9faf370e654.woff2",
     "static/media/BatonTurboWebTrial-Medium.woff2": "/sleip-weather/static/media/BatonTurboWebTrial-Medium.e4546d0e5e59c98f1ca8.woff2",
     "static/media/BatonTurboWebTrial-Book.woff2": "/sleip-weather/static/media/BatonTurboWebTrial-Book.826e594ca67a7abf5ff9.woff2",
     "index.html": "/sleip-weather/index.html",
     "main.9c87f621.css.map": "/sleip-weather/static/css/main.9c87f621.css.map",
-    "main.1c244d7d.js.map": "/sleip-weather/static/js/main.1c244d7d.js.map",
+    "main.7b26b154.js.map": "/sleip-weather/static/js/main.7b26b154.js.map",
     "787.54951cd8.chunk.js.map": "/sleip-weather/static/js/787.54951cd8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9c87f621.css",
-    "static/js/main.1c244d7d.js"
+    "static/js/main.7b26b154.js"
   ]
 }
