@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.6c0d71f4.css",
-    "main.js": "/static/js/main.4903d16a.js",
-    "static/js/787.54951cd8.chunk.js": "/static/js/787.54951cd8.chunk.js",
-    "static/media/BatonTurboWebTrial-Regular.woff2": "/static/media/BatonTurboWebTrial-Regular.a63abd91b9faf370e654.woff2",
-    "static/media/BatonTurboWebTrial-Medium.woff2": "/static/media/BatonTurboWebTrial-Medium.e4546d0e5e59c98f1ca8.woff2",
-    "static/media/BatonTurboWebTrial-Book.woff2": "/static/media/BatonTurboWebTrial-Book.826e594ca67a7abf5ff9.woff2",
-    "index.html": "/index.html",
-    "main.6c0d71f4.css.map": "/static/css/main.6c0d71f4.css.map",
-    "main.4903d16a.js.map": "/static/js/main.4903d16a.js.map",
-    "787.54951cd8.chunk.js.map": "/static/js/787.54951cd8.chunk.js.map"
+    "main.css": "/sleip-weather/static/css/main.9c87f621.css",
+    "main.js": "/sleip-weather/static/js/main.691ba46d.js",
+    "static/js/787.54951cd8.chunk.js": "/sleip-weather/static/js/787.54951cd8.chunk.js",
+    "static/media/BatonTurboWebTrial-Regular.woff2": "/sleip-weather/static/media/BatonTurboWebTrial-Regular.a63abd91b9faf370e654.woff2",
+    "static/media/BatonTurboWebTrial-Medium.woff2": "/sleip-weather/static/media/BatonTurboWebTrial-Medium.e4546d0e5e59c98f1ca8.woff2",
+    "static/media/BatonTurboWebTrial-Book.woff2": "/sleip-weather/static/media/BatonTurboWebTrial-Book.826e594ca67a7abf5ff9.woff2",
+    "index.html": "/sleip-weather/index.html",
+    "main.9c87f621.css.map": "/sleip-weather/static/css/main.9c87f621.css.map",
+    "main.691ba46d.js.map": "/sleip-weather/static/js/main.691ba46d.js.map",
+    "787.54951cd8.chunk.js.map": "/sleip-weather/static/js/787.54951cd8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6c0d71f4.css",
-    "static/js/main.4903d16a.js"
+    "static/css/main.9c87f621.css",
+    "static/js/main.691ba46d.js"
   ]
 }
