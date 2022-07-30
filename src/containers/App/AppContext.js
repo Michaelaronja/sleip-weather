@@ -80,6 +80,7 @@ export const AppProvider = (props) => {
       const { lat, lon } = coordinates;
 
       fetchWeatherData({ lat, lon });
+      e.target.reset();
     },
     [fetchWeatherData, searchTerm]
   );
