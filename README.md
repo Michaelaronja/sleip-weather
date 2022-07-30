@@ -1,8 +1,9 @@
 # sleip-weather
 
-### Clone project 
+## Run project locally 
+ 
 Run command `git clone https://github.com/Michaelaronja/sleip-weather.git` in your terminal 
 
-### Run project locally
+### Start local development server
 1. Run command `yarn` in your terminal to install all packages
-2. Run command `yarn start` in your terminal to run local development server 
+2. Run command `yarn start` in your terminal to start the server 
