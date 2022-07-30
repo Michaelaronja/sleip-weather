@@ -7,7 +7,7 @@ export const getCoordinates = async (city) => {
 
 export const getLocation = async ({ lat, lon }) => {
   return fetch(
-    `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${API_KEY}`
+    `${ENDPOINT}/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${API_KEY}`
   );
 };
 
