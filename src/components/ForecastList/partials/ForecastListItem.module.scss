@@ -1,0 +1,82 @@
+@import "../../../styles/_colors";
+@import "../../../styles/_spacing.scss";
+
+.root {
+  background: $dusty-green;
+  border-radius: 20px;
+  padding: spacing(2);
+  cursor: pointer;
+
+  * {
+    text-align: left;
+  }
+}
+
+.expanded {
+}
+
+.primaryDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftColumn {
+  & > * + * {
+    margin-top: 4px;
+  }
+}
+
+.date {
+  font-weight: 600;
+}
+
+.weatherDetails {
+  font-size: 12px;
+
+  & span {
+    font-family: "Baton Turbo Regular";
+  }
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon {
+  width: 34px;
+  margin-top: 2px;
+}
+
+.temp {
+  position: relative;
+  font-size: 24px;
+  margin-right: 5px; // compensating offset due to pseudo element
+
+  &::after {
+    content: "°";
+    top: -2px;
+    position: absolute;
+    font-size: 17px;
+  }
+}
+
+.expansionDetails {
+  width: 155px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 12px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.1s ease-out;
+
+  .expanded & {
+    height: auto;
+    max-height: 50px;
+  }
+}
+
+.expansionDetailValue {
+  text-align: right;
+  width: 20px;
+}

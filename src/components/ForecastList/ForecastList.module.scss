@@ -1,0 +1,15 @@
+@import "styles/_colors.scss";
+@import "styles/_spacing.scss";
+@import "styles/_breakpoints.scss";
+
+.root {
+  margin-top: spacing(4);
+
+  & > * + * {
+    margin-top: spacing(1);
+  }
+
+  @include breakpoints-down("md") {
+    padding: spacing(0, 2, 2);
+  }
+}

@@ -1,0 +1,9 @@
+@import "styles/_colors.scss";
+@import "styles/_spacing.scss";
+@import "styles/_breakpoints.scss";
+
+.root {
+  height: 100%;
+  min-height: 100vh;
+  text-align: center;
+}
