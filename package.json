@@ -1,5 +1,6 @@
 {
   "name": "sleip-weather",
+  "homepage": "https://michaelaronja.github.io/sleip-weather",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
