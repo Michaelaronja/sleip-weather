@@ -50,19 +50,8 @@
   transform: translate(-50%, -50%);
 
   @include breakpoints-up("md") {
-    width: 20%;
-  }
-}
-
-.loaderIcon {
-  & path {
-    animation: loading 2s linear infinite;
-  }
-
-  @include breakpoints-up("md") {
-    & path {
-      animation: loadingDesktop 2s linear infinite;
-    }
+    width: 27%;
+    max-width: 400px;
   }
 }
 
@@ -75,6 +64,18 @@
   @include breakpoints-up("md") {
     font-size: 20px;
     color: $mint-green-light;
+  }
+}
+
+.loaderIcon {
+  & path {
+    animation: loading 2s linear infinite;
+  }
+
+  @include breakpoints-up("md") {
+    & path {
+      animation: loadingDesktop 2s linear infinite;
+    }
   }
 }
 

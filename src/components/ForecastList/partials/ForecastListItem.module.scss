@@ -12,9 +12,6 @@
   }
 }
 
-.expanded {
-}
-
 .primaryDetails {
   display: flex;
   justify-content: space-between;
@@ -51,7 +48,6 @@
 .temp {
   position: relative;
   font-size: 24px;
-  margin-right: 5px; // compensating offset due to pseudo element
 
   &::after {
     content: "°";
@@ -63,10 +59,10 @@
 
 .expansionDetails {
   width: 155px;
+  max-height: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-size: 12px;
-  max-height: 0;
   overflow: hidden;
   transition: max-height 0.1s ease-out;
 
@@ -77,6 +73,6 @@
 }
 
 .expansionDetailValue {
-  text-align: right;
   width: 20px;
+  text-align: right;
 }

@@ -11,7 +11,8 @@ const WeatherIcon = ({ className, icon }) => {
 };
 
 WeatherIcon.propTypes = {
-  icon: PropTypes.string,
+  className: PropTypes.string,
+  icon: PropTypes.string.isRequired,
 };
 
 export default WeatherIcon;

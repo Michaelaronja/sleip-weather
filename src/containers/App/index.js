@@ -1,5 +1,4 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import { format } from "date-fns";
 import { useApp } from "containers/App/AppContext";
 import Search from "components/Search";
@@ -57,6 +56,7 @@ const App = () => {
                   <p>{locationName}</p>
                 </div>
               )}
+
               {temp && <p className={classes.weatherDataTemp}>{temp}</p>}
             </div>
 
@@ -67,6 +67,7 @@ const App = () => {
                 <p className={classes.weatherDataMain}>
                   {current?.weather[0]?.main}
                 </p>
+
                 <p className={classes.weatherDataDescription}>
                   {current?.weather[0]?.description}
                 </p>
@@ -89,16 +90,12 @@ const App = () => {
               </div>
             </div>
 
-            <ForecastList list={forecastList} />
+            {forecastList && <ForecastList list={forecastList} />}
           </div>
         </>
       )}
     </div>
   );
-};
-
-App.propTypes = {
-  weatherData: PropTypes.object,
 };
 
 export default App;

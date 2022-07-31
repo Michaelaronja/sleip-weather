@@ -20,20 +20,20 @@
   border-radius: 70px;
 
   & input {
+    width: 100%;
+    padding: 12px;
     font-family: "Baton Turbo";
     font-size: 15px;
-    width: 100%;
     border: 2px solid $primary-green-main;
     background: $primary-green-light;
-    padding: 12px;
     border-radius: 70px;
-    font-size: 14px;
     color: $primary-green-main;
+    transition: border-color 0.2s ease;
+
     appearance: none;
     -webkit-appearance: none;
     -ms-appearance: none;
     -moz-appearance: none;
-    transition: border-color 0.2s ease;
 
     &:focus {
       outline: none;
@@ -79,13 +79,13 @@
 .submitBtn {
   width: 34px;
   height: 34px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   right: 5px;
   top: 50%;
   transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   border-radius: 100%;
   border: none;

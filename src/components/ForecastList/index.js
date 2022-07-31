@@ -14,7 +14,7 @@ const ForecastList = ({ list = [] }) => {
 };
 
 ForecastList.propTypes = {
-  list: PropTypes.array,
+  list: PropTypes.array.isRequired,
 };
 
 export default ForecastList;

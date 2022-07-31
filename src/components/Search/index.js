@@ -5,11 +5,11 @@ import { useAppHandlers } from "containers/App/AppContext";
 import SearchIcon from "components/icons/Search";
 import classes from "./Search.module.scss";
 
-const Search = ({ className, ...other }) => {
+const Search = ({ className }) => {
   const { onLocationSearchSubmit, onLocationSearchChange } = useAppHandlers();
 
   return (
-    <div className={classnames(className, classes.root)} {...other}>
+    <div className={classnames(className, classes.root)}>
       <form onSubmit={onLocationSearchSubmit}>
         <div className={classes.customField}>
           <input

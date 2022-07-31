@@ -5,15 +5,13 @@ import classnames from "clsx";
 import WeatherIcon from "components/WeatherIcon";
 import classes from "./ForecastListItem.module.scss";
 
-const ForecastListItem = ({ item, expanded: expandedProp }) => {
-  const [expanded, setExpanded] = React.useState(expandedProp);
+const ForecastListItem = ({ expanded: expandedProp, item }) => {
+  const [expanded, setExpanded] = React.useState(expandedProp || false);
 
   const date = new Date(item.dt * 1000);
   const formatDate = format(date, "MMMM d, EEEE");
 
-  const handleClick = React.useCallback(() => {
-    setExpanded((prev) => !prev);
-  }, []);
+  const handleClick = () => setExpanded((prev) => !prev);
 
   return (
     <div
@@ -25,6 +23,7 @@ const ForecastListItem = ({ item, expanded: expandedProp }) => {
           <div>
             <p className={classes.date}>{formatDate}</p>
           </div>
+
           <p className={classes.weatherDetails}>
             {item.weather[0]?.main}, <span>{item.weather[0]?.description}</span>
           </p>
@@ -45,10 +44,12 @@ const ForecastListItem = ({ item, expanded: expandedProp }) => {
         <p className={classes.expansionDetailValue}>
           {Math.ceil(item?.feels_like.day)}
         </p>
+
         <p>wind m/s</p>
         <p className={classes.expansionDetailValue}>
           {Math.ceil(item?.wind_speed)}
         </p>
+
         <p>Clouds %</p>
         <p className={classes.expansionDetailValue}>{item.clouds}</p>
       </div>
@@ -57,7 +58,8 @@ const ForecastListItem = ({ item, expanded: expandedProp }) => {
 };
 
 ForecastListItem.propTypes = {
-  item: PropTypes.object,
+  expanded: PropTypes.bool,
+  item: PropTypes.object.isRequired,
 };
 
 export default ForecastListItem;
