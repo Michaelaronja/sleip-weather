@@ -1,5 +1,6 @@
 import * as React from "react";
 import PropTypes from "prop-types";
+import throttle from "lodash.throttle";
 import { getWeatherData, getCoordinates, getLocation } from "api";
 
 const AppContext = React.createContext({});
@@ -16,10 +17,10 @@ export function useApp() {
 export const AppProvider = (props) => {
   const { children } = props;
 
-  const [searchTerm, setSearchTerm] = React.useState("");
   const [weatherData, setWeatherData] = React.useState({});
   const [locationName, setLocationName] = React.useState();
   const [isLoading, setIsLoading] = React.useState(false);
+  const [locationsList, setLocationsList] = React.useState([]);
 
   const hasGeolocation = React.useRef(false);
 
@@ -27,7 +28,12 @@ export const AppProvider = (props) => {
     await getLocation(coordinates).then((res) =>
       res
         .json()
-        .then(async (data) => setLocationName(data?.[0]?.name))
+        .then(async (data) => {
+          const name = data?.[0]?.state
+            ? `${data?.[0]?.name}, ${data?.[0]?.state}`
+            : `${data?.[0]?.name}`;
+          setLocationName(name);
+        })
         .catch((err) => console.log({ err }))
     );
   }, []);
@@ -65,24 +71,41 @@ export const AppProvider = (props) => {
     [fetchWeatherData]
   );
 
-  const onLocationSearchChange = React.useCallback((e) => {
-    setSearchTerm(e.target.value);
-  }, []);
-
   const onLocationSearchSubmit = React.useCallback(
-    async (e) => {
+    async (e, props) => {
       e.preventDefault();
 
-      const coordinates = await getCoordinates(searchTerm).then((res) =>
-        res.json().then((data) => data?.[0])
-      );
-
-      const { lat, lon } = coordinates;
+      const { lat, lon } = props;
 
       fetchWeatherData({ lat, lon });
-      e.target.reset();
+      setLocationsList([]);
     },
-    [fetchWeatherData, searchTerm]
+    [fetchWeatherData]
+  );
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const autocompleteLocations = React.useCallback(
+    throttle(
+      async (e) => {
+        const locationOptions = await getCoordinates(e.target.value).then(
+          (res) => res.json().then((data) => data)
+        );
+
+        setLocationsList(locationOptions);
+      },
+      600,
+      {
+        leading: false,
+      }
+    ),
+    []
+  );
+
+  const onLocationSearchChange = React.useCallback(
+    (e) => {
+      autocompleteLocations(e);
+    },
+    [autocompleteLocations]
   );
 
   React.useEffect(() => {
@@ -121,6 +144,7 @@ export const AppProvider = (props) => {
   const contextValue = {
     isLoading,
     locationName,
+    locationsList,
     weatherData,
   };
 

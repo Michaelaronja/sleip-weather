@@ -2,7 +2,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 const ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
 export const getCoordinates = async (city) => {
-  return fetch(`${ENDPOINT}/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`);
+  return fetch(`${ENDPOINT}/geo/1.0/direct?q=${city}&limit=5&appid=${API_KEY}`);
 };
 
 export const getLocation = async ({ lat, lon }) => {

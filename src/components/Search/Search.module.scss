@@ -15,6 +15,10 @@
   }
 }
 
+.form {
+  position: relative;
+}
+
 .customField {
   position: relative;
   border-radius: 70px;
@@ -35,13 +39,16 @@
     -ms-appearance: none;
     -moz-appearance: none;
 
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+
     &:focus {
       outline: none;
       border-color: $mint-green;
-
-      & ~ .submitBtn {
-        background-color: $mint-green;
-      }
     }
 
     &::placeholder {
@@ -59,14 +66,6 @@
       &:focus {
         outline: none;
         border-color: $yellow;
-
-        & ~ .submitBtn {
-          background-color: $yellow;
-
-          & .submitIcon > path {
-            fill: $primary-green-main;
-          }
-        }
       }
 
       &::placeholder {
@@ -76,35 +75,16 @@
   }
 }
 
-.submitBtn {
-  width: 34px;
-  height: 34px;
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  border-radius: 100%;
-  border: none;
-  background-color: $primary-green-main;
-  transition: background-color 0.2s ease;
-
-  @include breakpoints-up("md") {
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-  }
-}
-
 .submitIcon {
   width: 24px;
   height: 24px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
 
   & path {
-    fill: $primary-green-light;
+    fill: $primary-green-main;
     transition: fill 0.2s ease;
   }
 
@@ -115,5 +95,41 @@
     & path {
       fill: $white;
     }
+  }
+}
+
+.options {
+  width: 100%;
+  position: absolute;
+  background-color: $white;
+  border-radius: 15px;
+  top: spacing(7);
+  z-index: 1;
+  padding: spacing(2, 0);
+
+  @include breakpoints-up("md") {
+    background-color: $primary-green-light;
+    top: spacing(9);
+  }
+}
+
+.option {
+  padding: spacing(1, 2);
+  cursor: pointer;
+  text-align: left;
+
+  // button reset
+  width: 100%;
+  font-family: "Baton Turbo";
+  font-size: 15px;
+  color: $primary-green-main;
+  border: none;
+  display: block;
+  background: transparent;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $dusty-green-light;
+    outline: none;
   }
 }
