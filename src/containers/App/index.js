@@ -16,7 +16,7 @@ const App = () => {
 
   const icon = current?.weather[0]?.icon;
   const currentDate = Date.now(current?.dt);
-  const date = format(new Date(currentDate), "MMMM dd, EEEE");
+  const date = format(new Date(currentDate), "MMMM d, EEEE");
   const temp = String(Math.ceil(current?.temp));
   const forecastList = daily?.slice(1);
 
