@@ -40,12 +40,12 @@ const ForecastListItem = ({ expanded: expandedProp, item }) => {
       </div>
 
       <div className={classes.expansionDetails}>
-        <p>feels like ºC</p>
+        <p>Feels like ºC</p>
         <p className={classes.expansionDetailValue}>
           {Math.ceil(item?.feels_like.day)}
         </p>
 
-        <p>wind m/s</p>
+        <p>Wind m/s</p>
         <p className={classes.expansionDetailValue}>
           {Math.ceil(item?.wind_speed)}
         </p>

@@ -75,17 +75,17 @@ const App = () => {
 
               <div className={classes.weatherDataParams}>
                 <p>
-                  wind m/s
+                  Wind m/s
                   <span>{String(Math.ceil(current?.wind_speed))}</span>
                 </p>
 
                 <p>
-                  feels like ºC
+                  Feels like ºC
                   <span>{String(Math.ceil(current?.feels_like))}</span>
                 </p>
 
                 <p>
-                  clouds %<span>{String(current?.clouds)}</span>
+                  Clouds %<span>{String(current?.clouds)}</span>
                 </p>
               </div>
             </div>
