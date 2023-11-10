@@ -80,12 +80,12 @@
 }
 
 .container {
-  background-color: $primary-green-light;
   position: relative;
+  overflow: auto;
+  background-color: $primary-green-light;
   @include breakpoints-up("md") {
     grid-column: span 1;
     padding: spacing(4, 2, 2);
-    overflow-y: scroll;
     border-radius: 20px;
   }
 }
